@@ -9,20 +9,6 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) throws NoSuchFieldException, IllegalAccessException, InterruptedException {
         Fraction fraction = new Fraction(2,3);
-        /*
-        Class cls = fraction.getClass();
-        List<String> lFields = new ArrayList<>();
-        Arrays.stream(cls.getDeclaredFields()).forEach(x->lFields.add(x.getName()));
-        Collections.sort(lFields);
-        String sState = "";
-        for(String fname : lFields) {
-            Field f = cls.getDeclaredField(fname);
-            f.setAccessible(true);
-            if (sState.length() > 0) {sState += "|";}
-            sState += fname + "=" + f.get(fraction).toString();
-        }
-        System.out.println(sState);
-        */
         Fractionable num = (Fractionable) Utils.cache(fraction);
         double d;
         num.doubleValue();// sout сработал
